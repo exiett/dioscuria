@@ -3,14 +3,14 @@ body {
     background: url('images/background.gif') no-repeat center center fixed;
     background-size: cover;
     color: #F5F5F5; /* Off-white */
-    font-family: 'VT323', monospace; /* Updated to Fira Code for terminal-like font */
+    font-family: 'VT323', monospace; /* Using VT323 for terminal-like font */
     font-weight: 400;
     font-style: normal;
     margin: 0;
     padding: 0;
     line-height: 1.6;
     overflow-x: hidden; /* Prevents horizontal scroll */
-} 
+}
 
 /* Header, Main Content, and Footer Styles */
 header {
@@ -29,14 +29,16 @@ h1, h2 {
 
 main {
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
     border: none; /* Ensure no borders on main section */
 }
 
-article {
-    margin-bottom: 20px;
-    border-bottom: none; /* Removed bottom border */
-    padding-bottom: 20px;
+/* Unified Background Style for Text Block */
+#intro {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for the entire block */
+    padding: 20px;
+    margin: 20px auto; /* Center the block */
+    width: 80%; /* Control width for better readability */
+    border-radius: 10px; /* Rounded corners for a softer look */
 }
 
 /* Remove border styles from list items */
@@ -64,14 +66,4 @@ footer {
     padding: 10px;
     border-top: none; /* Removed horizontal top border */
     background-color: rgba(0, 0, 0, 0.5);
-}
-
-/* Paragraph Style */
-#intro p {
-    color: #F5F5F5; /* Off-white */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
-    padding: 10px;
-    font-size: 1.2em; /* Slightly larger font for emphasis */
-    margin: 20px auto; /* Center the paragraph with some margin */
-    width: 80%; /* Control the width for better readability */
 }
