@@ -1,0 +1,67 @@
+/* Global Styles */
+body {
+    background: url('images/background.gif') no-repeat center center fixed;
+    background-size: cover;
+    color: #F5F5F5; /* Off-white */
+    font-family: 'VT323', monospace; /* Updated to Fira Code for terminal-like font */
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+} 
+
+/* Header, Main Content, and Footer Styles */
+header {
+    text-align: left;
+    padding: 20px;
+    border-bottom: none; /* Removed horizontal bottom border */
+}
+
+h1, h2 {
+    color: #00FF00;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    padding: 5px 10px;
+    border: none; /* Ensure no border around text */
+}
+
+main {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none; /* Ensure no borders on main section */
+}
+
+article {
+    margin-bottom: 20px;
+    border-bottom: none; /* Removed bottom border */
+    padding-bottom: 20px;
+}
+
+/* Remove border styles from list items */
+ul {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0;
+}
+
+li {
+    border: none; /* Remove any borders from list items */
+    padding: 10px 0; /* Optional: Add padding to separate items */
+}
+
+a {
+    color: #00FF00;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    border-top: none; /* Removed horizontal top border */
+    background-color: rgba(0, 0, 0, 0.5);
+}
