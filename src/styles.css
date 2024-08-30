@@ -65,3 +65,13 @@ footer {
     border-top: none; /* Removed horizontal top border */
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+/* Paragraph Style */
+#intro p {
+    color: #F5F5F5; /* Off-white */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    padding: 10px;
+    font-size: 1.2em; /* Slightly larger font for emphasis */
+    margin: 20px auto; /* Center the paragraph with some margin */
+    width: 80%; /* Control the width for better readability */
+}
