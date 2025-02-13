@@ -1,45 +1,41 @@
-(function() {
-  // Create an overlay container for user info
-  var container = document.createElement('div');
-  container.id = "user-info-overlay";
+(function(){
+  // Create overlay container
+  const container = document.createElement('div');
+  container.id = 'visitor-info-overlay';
   Object.assign(container.style, {
-    position: "fixed",
-    top: "0",
-    left: "0",
-    width: "100%",
-    height: "100%",
-    pointerEvents: "none",
-    zIndex: "-3",
+    position: 'fixed',
+    bottom: '0',
+    left: '0',
+    width: '100%',
+    color: 'rgba(0,255,255,0.8)', // Increased opacity for visibility
     fontFamily: "'Fira Code', monospace",
-    fontSize: "0.8em",
-    color: "rgba(0,255,255,0.1)",
-    whiteSpace: "pre-wrap",
-    overflow: "hidden",
-    mixBlendMode: "overlay"
+    fontSize: '0.8em',
+    whiteSpace: 'pre-wrap',
+    pointerEvents: 'none',
+    zIndex: '9999',
+    padding: '10px'
   });
   document.body.appendChild(container);
 
-  // Gather static info from the navigator
-  var infoText = "User-Agent: " + navigator.userAgent + "\n";
-  infoText += "Browser: " + (navigator.appName || "unknown") + "\n";
-  infoText += "O.S.: " + (navigator.platform || "unknown") + "\n";
+  // Gather basic info
+  let infoText = `User-Agent: ${navigator.userAgent}\n`;
+  infoText += `Browser: ${navigator.appName}\n`;
+  infoText += `O.S.: ${navigator.platform}\n`;
 
-  // Fetch the client IP using an external API
+  // Fetch client IP and location data
   fetch('https://api.ipify.org?format=json')
     .then(response => response.json())
     .then(data => {
-      infoText += "Client IP: " + data.ip + "\n";
-      // Fetch location info from another API
+      infoText += `Client IP: ${data.ip}\n`;
       return fetch('https://ipapi.co/json/');
     })
     .then(response => response.json())
     .then(location => {
-      infoText += "Location: " + location.city + ", " + location.region + ", " + location.country_name;
-      container.innerText = infoText;
+      infoText += `Location: ${location.city}, ${location.region}, ${location.country_name}`;
+      container.textContent = infoText;
     })
     .catch(err => {
       console.error(err);
-      container.innerText = infoText;
+      container.textContent = infoText;
     });
 })();
-
