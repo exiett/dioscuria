@@ -1,0 +1,588 @@
+/* Bearblog Dashboard Matrix-CRT Style
+ * Amber-on-black theme with CRT effects
+ */
+
+/* Import required fonts */
+@import url('https://fonts.googleapis.com/css2?family=Iosevka:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+    --width: 800px;
+    --font-main: 'Iosevka', monospace;
+    --font-secondary: 'Iosevka', monospace;
+    --font-scale: 1em;
+    --background-color: #000000;
+    --heading-color: #FFBF00;
+    --text-color: #FFBF00;
+    --link-color: #FFFFFF;
+    --visited-color: #FFFFFF;
+    --code-background-color: rgba(255, 191, 0, 0.1);
+    --code-color: #FFBF00;
+    --blockquote-color: #FFBF00;
+    --border-color: #FFBF00;
+}
+
+/* Base styles */
+body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+    text-shadow: 0 0 5px rgba(255, 191, 0, 0.7); /* Amber glow */
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px rgba(255, 191, 0, 0.8);
+}
+
+/* Links */
+a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* White glow */
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+}
+
+nav a {
+    margin-right: 8px;
+}
+
+a:visited, ul.blog-posts li a:visited, ul.discover-posts li a:visited {
+    color: var(--visited-color);
+    opacity: 0.8;
+}
+
+/* Strong elements */
+strong, b {
+    color: var(--heading-color);
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(255, 191, 0, 0.8);
+}
+
+/* Buttons */
+button {
+    margin: 5px 0;
+    cursor: pointer;
+    background-color: #000000;
+    color: #FFBF00;
+    font-family: 'Iosevka', monospace;
+    border: 1px solid #FFBF00;
+    border-radius: 0;
+    padding: 8px 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(255, 191, 0, 0.7);
+}
+
+button:hover {
+    background-color: #FFBF00;
+    color: #000000;
+    text-shadow: none;
+}
+
+button.floating {
+    position: fixed;
+    bottom: 20px;
+    right: 25px;
+    z-index: 100;
+}
+
+button#toggle-full-screen {
+    float: right;
+}
+
+/* Main content */
+main {
+    line-height: 1.6;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border: 1px solid var(--border-color);
+}
+
+th, td {
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    text-align: left;
+}
+
+th {
+    background-color: rgba(255, 191, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Horizontal rule */
+hr {
+    border: 0;
+    border-top: 1px dashed var(--border-color);
+    margin: 20px 0;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    border: 1px solid var(--border-color);
+}
+
+/* Code */
+code {
+    font-family: 'IBM Plex Mono', monospace;
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+}
+
+.highlight, .code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+    font-family: 'IBM Plex Mono', monospace;
+    border: 1px solid rgba(255, 191, 0, 0.3);
+}
+
+/* Blockquote */
+blockquote {
+    border-left: 1px solid var(--border-color);
+    color: var(--blockquote-color);
+    padding-left: 20px;
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    padding: 25px 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    margin-top: 30px;
+}
+
+/* Title */
+.title:hover {
+    text-decoration: none;
+}
+
+.title h1 {
+    font-size: 1.5em;
+}
+
+.inline {
+    width: auto !important;
+}
+
+/* Blog post lists */
+ul.blog-posts, ul.post-list, ul.discover-posts {
+    list-style-type: none;
+    padding: unset;
+}
+
+ul.blog-posts li, ul.discover-posts li {
+    display: flex;
+}
+
+ul.blog-posts li span {
+    flex: 0 0 130px;
+}
+
+/* Bear styles */
+.bear {
+    font-weight: 400;
+    font-family: 'Iosevka', monospace;
+    white-space: nowrap;
+    display: inline-block;
+    color: #FFBF00;
+}
+
+.flex::before {
+    content: "ᕦʕ •ᴥ•ʔᕤ";
+    animation: matrixblink 10s infinite;
+    color: #FFBF00;
+    text-shadow: 0 0 5px rgba(255, 191, 0, 0.7);
+}
+
+.flex:hover::before {
+    content: "ᕙʕ ಠᴥಠʔᕗ";
+    animation: none;
+}
+
+.upgrade:hover .flex::before {
+    content: "ᕙʕ ಠᴥಠʔᕗ";
+    animation: none;
+    text-decoration: underline;
+}
+
+@keyframes matrixblink {
+    0%, 96% { content: "ᕦʕ •ᴥ•ʔᕤ"; text-shadow: 0 0 5px rgba(255, 191, 0, 0.7); }
+    97%, 100% { content: "ᕦʕ -ᴥ-ʔᕤ"; text-shadow: 0 0 10px rgba(255, 191, 0, 0.9); }
+}
+
+a.account:hover {
+    text-decoration: none;
+}
+
+a.account::before {
+    content: "ʕ-ᴥ-ʔ";
+    color: #FFBF00;
+    text-shadow: 0 0 5px rgba(255, 191, 0, 0.7);
+}
+
+.account:hover::before {
+    content: "ʕ•ᴥ•ʔ";
+    text-shadow: 0 0 10px rgba(255, 191, 0, 0.9);
+}
+
+/* Header navigation */
+header nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+header nav a:last-child {
+    margin-right: 0;
+}
+
+/* Labels */
+label {
+    font-weight: bold;
+    color: var(--heading-color);
+    text-shadow: 0 0 5px rgba(255, 191, 0, 0.7);
+}
+
+/* Time */
+time {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Form elements */
+textarea,
+input:not([type="submit"]),
+.editable {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--border-color);
+    line-height: 1.7;
+    outline: none;
+    color: var(--text-color);
+    padding: 10px;
+    font-size: 18px;
+    font-family: 'IBM Plex Mono', monospace;
+    text-shadow: 0 0 5px rgba(255, 191, 0, 0.4);
+    box-shadow: inset 0 0 10px rgba(255, 191, 0, 0.1);
+}
+
+textarea:focus, 
+input:focus:not([type="submit"]),
+.editable:focus {
+    border-color: #FFFFFF;
+    box-shadow: 0 0 15px rgba(255, 191, 0, 0.3);
+}
+
+.full-width textarea,
+.full-width input:not([type="submit"], [type="checkbox"], [type="radio"]) {
+    width: calc(100% - 20px);
+}
+
+textarea:required,
+input:required:not([type="submit"]){
+    border-left: 2px solid #ff9800;
+}
+
+input[type='checkbox'], input[type='radio'] {
+    height: 15px;
+    margin-right: 10px;
+    accent-color: #FFBF00;
+}
+
+input[type="submit"] {
+    background-color: #000000;
+    color: #FFBF00;
+    font-family: 'Iosevka', monospace;
+    border: 1px solid #FFBF00;
+    border-radius: 0;
+    padding: 8px 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-shadow: 0 0 5px rgba(255, 191, 0, 0.7);
+}
+
+input[type="submit"]:hover {
+    background-color: #FFBF00;
+    color: #000000;
+    text-shadow: none;
+}
+
+/* Sticky controls */
+.sticky-controls {
+    position: sticky;
+    top: 0;
+    background-color: var(--background-color);
+    line-height: 0;
+    z-index: 10;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 191, 0, 0.3);
+}
+
+/* Help text */
+.helptext {
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255, 191, 0, 0.7);
+    font-size: small;
+}
+
+.helptext.sticky {
+    position: sticky;
+    bottom: 0;
+    background-color: var(--background-color);
+    padding: 3px 0;
+    border-top: 1px solid rgba(255, 191, 0, 0.3);
+}
+
+/* Error list */
+.errorlist {
+    color: #ff9800;
+    font-size: small;
+    text-shadow: 0 0 5px rgba(255, 152, 0, 0.7);
+}
+
+/* Date range */
+#date-range{
+    display: none;
+}
+
+#date-range:target{
+    display: block;
+}
+
+/* Notifications */
+.notification {
+    width: 100%;
+    text-align: left;
+    padding: 5px 0;
+    margin-bottom: -15px;
+    background-color: rgba(255, 191, 0, 0.1);
+    border: 1px solid var(--border-color);
+    padding: 10px;
+}
+
+.notification a {
+    margin: 0;
+}
+
+/* Dashboard post list */
+ul.post-list li {
+    display: flex;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 191, 0, 0.3);
+}
+
+ul.post-list li span {
+    flex: 0 0 130px;
+}
+
+ul.post-list li span.number {
+    flex: 0 0 50px;
+}
+
+ul.post-list li a {
+    flex: max-content;
+}
+
+ul.post-list li small {
+    text-align: right;
+    flex: 0 0 115px;
+    color: rgba(255, 191, 0, 0.7);
+}
+
+/* Media center */
+.media-container {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 5px;
+}
+
+.media-item {
+    text-align: center;
+    background-color: rgba(255, 191, 0, 0.1);
+    position: relative;
+    border: 1px solid var(--border-color);
+    padding: 5px;
+}
+
+.media-checkbox {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    margin: 0 !important;
+    height: unset !important;
+}
+
+/* Discovery feed */
+ul.discover-posts li {
+    display: flex;
+    flex-flow: row no-wrap;
+    gap: 10px;
+    line-height: 1.2;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 191, 0, 0.2);
+    padding: 8px 0;
+}
+
+ul.discover-posts li span {
+    flex: 0 0 30px;
+}
+
+ul.discover-posts li div {
+    padding-bottom: 8px;
+}
+
+ul.discover-posts li small span, ul.discover-posts li small span a {
+    color: rgba(255, 191, 0, 0.7) !important;
+    text-shadow: 0 0 3px rgba(255, 191, 0, 0.4);
+}
+
+/* Selections */
+::selection {
+    background-color: rgba(255, 191, 0, 0.3);
+    color: #FFFFFF;
+}
+
+/* Add CRT scan line effect */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+    background-size: 100% 4px;
+    z-index: 999;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+/* Add CRT flicker animation */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 16, 16, 0);
+    z-index: 1000;
+    pointer-events: none;
+    animation: flicker 0.15s infinite;
+    opacity: 0.02;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.02; }
+    5% { opacity: 0.02; }
+    10% { opacity: 0.04; }
+    15% { opacity: 0.02; }
+    20% { opacity: 0.02; }
+    25% { opacity: 0.02; }
+    30% { opacity: 0.03; }
+    35% { opacity: 0.02; }
+    40% { opacity: 0.04; }
+    45% { opacity: 0.02; }
+    50% { opacity: 0.03; }
+    55% { opacity: 0.02; }
+    60% { opacity: 0.02; }
+    65% { opacity: 0.03; }
+    70% { opacity: 0.02; }
+    75% { opacity: 0.04; }
+    80% { opacity: 0.02; }
+    85% { opacity: 0.02; }
+    90% { opacity: 0.03; }
+    95% { opacity: 0.02; }
+    100% { opacity: 0.02; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FFBF00;
+    border: 2px solid #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #FFFFFF;
+}
+
+/* Select element styling */
+select {
+    background-color: #000000;
+    color: #FFBF00;
+    border: 1px solid #FFBF00;
+    font-family: 'Iosevka', monospace;
+    padding: 5px 10px;
+    text-shadow: 0 0 5px rgba(255, 191, 0, 0.7);
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #FFBF00 50%), 
+                      linear-gradient(135deg, #FFBF00 50%, transparent 50%);
+    background-position: calc(100% - 15px) center, calc(100% - 10px) center;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+}
+
+select:focus {
+    outline: none;
+    border-color: #FFFFFF;
+    box-shadow: 0 0 10px rgba(255, 191, 0, 0.5);
+}
+
+/* Add terminal cursor blink effect to text areas */
+@keyframes cursor-blink {
+    0%, 49% { border-right: 2px solid #FFBF00; }
+    50%, 100% { border-right: 2px solid transparent; }
+}
+
+textarea:focus {
+    animation: cursor-blink 1s infinite;
+}

@@ -1,2 +1,2 @@
 # dioscuria
-From a troubled past to a present full of turmoil and into a terrible future.
+Home of the static assets to [my blog](https://www.dioscuria.com/).
